@@ -9,6 +9,10 @@ const card = new mongoose.Schema({
   id: String,
   title: String,
   note: String,
+  pinned: {
+    type: Boolean,
+    default: false,
+  },
   cardTags: [cardTag],
 });
 
@@ -18,10 +22,7 @@ const tag = new mongoose.Schema({
 });
 
 const schema = new mongoose.Schema({
-  id: {
-    type: String,
-    default: '1',
-  },
+  id: String,
   cards: [card],
   tags: [tag],
 });
@@ -35,6 +36,7 @@ module.exports = mongoose.model('collection', schema);
 //             "id": "1",
 //             "title": "Hello",
 //             "note": "Hello, my name is Yash.",
+//             "pinned": false,
 //             "cardTags": [
 //                 {
 //                     "id": "111",
