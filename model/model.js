@@ -1,25 +1,17 @@
 const mongoose = require('mongoose');
 
-const cardTag = new mongoose.Schema({
-  title: String,
-});
-
 const card = new mongoose.Schema({
   id: String,
   title: String,
   note: String,
   pin: Boolean,
-  cardTags: [cardTag],
-});
-
-const tag = new mongoose.Schema({
-  title: String,
+  cardTags: [String],
 });
 
 const schema = new mongoose.Schema({
   id: String,
   cards: [card],
-  tags: [tag],
+  tags: [String],
 });
 
 module.exports = mongoose.model('collection', schema);
