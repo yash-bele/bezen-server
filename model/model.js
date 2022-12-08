@@ -9,10 +9,7 @@ const card = new mongoose.Schema({
   id: String,
   title: String,
   note: String,
-  pin: {
-    type: Boolean,
-    default: false,
-  },
+  pin: Boolean,
   cardTags: [cardTag],
 });
 
