@@ -22,7 +22,7 @@ const getData = async (req, res) => {
 const patchData = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await collection.findOneAndUpdate({ id });
+    const data = await collection.findOneAndUpdate({ id }, req.body);
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json(error);
