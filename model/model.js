@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const cardTag = new mongoose.Schema({
-  id: String,
   title: String,
 });
 
@@ -14,7 +13,6 @@ const card = new mongoose.Schema({
 });
 
 const tag = new mongoose.Schema({
-  id: String,
   title: String,
 });
 
